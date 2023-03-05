@@ -7,7 +7,7 @@ const server = http.createServer(app);
 const io = socketIO(server);
 
 // define a pasta de arquivos estáticos
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + 'src/public'));
 
 // lista para armazenar as mensagens
 const messages = [];
@@ -66,12 +66,12 @@ io.on('connection', (socket) => {
 });
 
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/views/index.html')
+    res.sendFile(__dirname + 'src/views/index.html')
 })
 
 // Rota do chat
 app.get('/chat', (req, res) => {
-    res.sendFile(__dirname + '/views/chat.html');
+    res.sendFile(__dirname + 'src/views/chat.html');
   });
   
 
